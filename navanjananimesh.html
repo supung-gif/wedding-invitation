@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navanjana & Nimesh | Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+Sinhala:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Cormorant Garamond',serif;
+  background:#faf7f2;
+  color:#3a2e24;
+  overflow-x:hidden;
+}
+:root{
+  --gold:#c9a84c;
+  --gold-light:#e8d5a3;
+  --gold-lighter:#f5edd8;
+  --gold-dark:#8b6914;
+  --cream:#faf7f2;
+  --cream-dark:#f0e8d8;
+  --cream-mid:#f5ede0;
+  --brown:#3a2e24;
+  --brown-light:#6b5744;
+  --brown-mid:#8a6f5a;
+}
+
+/* ========== PAGE 1 - INTRO ========== */
+#page1{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:var(--cream);
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+.petal-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.petal{position:absolute;border-radius:50% 0 50% 0;animation:petalfall linear infinite;opacity:0}
+@keyframes petalfall{
+  0%{transform:translateY(-40px) rotate(0deg);opacity:0}
+  10%{opacity:0.18}
+  85%{opacity:0.12}
+  100%{transform:translateY(105vh) rotate(400deg);opacity:0}
+}
+
+/* Corner decorations */
+.corner-deco{position:absolute;width:70px;height:70px;pointer-events:none}
+.corner-deco.tl{top:18px;left:18px}
+.corner-deco.tr{top:18px;right:18px;transform:scaleX(-1)}
+.corner-deco.bl{bottom:18px;left:18px;transform:scaleY(-1)}
+.corner-deco.br{bottom:18px;right:18px;transform:scale(-1,-1)}
+
+.outer-border{
+  position:absolute;inset:14px;
+  border:1px solid var(--gold-light);
+  pointer-events:none;
+  z-index:1;
+}
+.inner-border{
+  position:absolute;inset:22px;
+  border:0.5px solid rgba(201,168,76,0.3);
+  pointer-events:none;
+  z-index:1;
+}
+
+.p1-content{
+  z-index:2;
+  text-align:center;
+  padding:2rem 1.5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  max-width:500px;
+}
+.p1-sinhala-top{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:12px;
+  letter-spacing:0.2em;
+  color:var(--gold-dark);
+  margin-bottom:1.2rem;
+  opacity:0.8;
+}
+/* Couple image container */
+.couple-image-wrap {
+  margin: 0.5rem auto 1rem;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.couple-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background: var(--cream);
+}
+.divider{
+  display:flex;align-items:center;gap:10px;
+  width:100%;max-width:260px;margin:1rem auto;
+}
+.divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold-light),transparent)}
+.divider-gem{
+  width:7px;height:7px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+.p1-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,10vw,58px);
+  font-weight:400;
+  color:var(--brown);
+  line-height:1.1;
+}
+.p1-and{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,5vw,34px);
+  font-style:italic;
+  color:var(--gold);
+  margin:0.2rem 0;
+}
+.p1-date{
+  font-size:clamp(11px,3vw,15px);
+  letter-spacing:0.35em;
+  color:var(--brown-light);
+  margin:0.8rem 0 0.3rem;
+}
+.p1-venue-si{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:clamp(11px,3vw,13px);
+  color:var(--brown-mid);
+  margin-bottom:0.1rem;
+}
+.p1-venue-en{
+  font-size:clamp(11px,3vw,13px);
+  color:var(--brown-mid);
+  margin-bottom:2rem;
+}
+.open-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 38px;
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold-dark);
+  font-family:'Playfair Display',serif;
+  font-size:16px;
+  font-style:italic;
+  cursor:pointer;
+  transition:all 0.4s;
+  animation:btnpulse 2.5s ease-in-out infinite;
+  letter-spacing:0.05em;
+}
+.open-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+@keyframes btnpulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,0.35)}
+  50%{box-shadow:0 0 0 10px rgba(201,168,76,0)}
+}
+
+/* ========== PAGE 2 - MAIN ========== */
+#page2{display:none}
+
+/* Section base */
+.section{
+  padding:3.5rem 1.5rem;
+  text-align:center;
+  position:relative;
+}
+.section-inner{max-width:500px;margin:0 auto}
+.sec-label{
+  font-size:10px;
+  letter-spacing:0.35em;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:0.7rem;
+  display:block;
+}
+.sec-title-en{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(24px,6vw,38px);
+  font-weight:400;
+  color:var(--brown);
+  line-height:1.2;
+}
+.sec-title-si{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:clamp(16px,4vw,24px);
+  color:var(--brown);
+  line-height:1.5;
+}
+.sec-body{
+  font-size:16px;
+  line-height:2;
+  color:var(--brown-light);
+}
+.sec-body-si{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:14px;
+  line-height:2.2;
+  color:var(--brown-light);
+}
+
+/* ---- NAMES section ---- */
+.names-sec{background:var(--cream-dark)}
+.name-main{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,8vw,48px);
+  font-style:italic;
+  color:var(--brown);
+  line-height:1.2;
+}
+.name-si{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:clamp(14px,4vw,20px);
+  color:var(--brown-mid);
+  margin-top:0.2rem;
+}
+.names-and{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(18px,5vw,30px);
+  font-style:italic;
+  color:var(--gold);
+  margin:0.5rem 0;
+}
+
+/* ---- SAVE THE DATE ---- */
+.std-sec{background:var(--cream)}
+.std-date-big{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,10vw,64px);
+  font-weight:400;
+  color:var(--brown);
+  letter-spacing:0.08em;
+  margin:0.5rem 0;
+}
+.std-day{
+  font-size:13px;
+  letter-spacing:0.3em;
+  color:var(--gold-dark);
+  margin-bottom:0.5rem;
+}
+
+/* ---- INVITATION TEXT ---- */
+.invite-sec{background:var(--cream-dark)}
+.invite-families{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(16px,4vw,22px);
+  font-style:italic;
+  color:var(--gold-dark);
+  line-height:1.8;
+  margin:1.2rem 0;
+}
+
+/* ---- MAP ---- */
+.map-sec{background:var(--cream)}
+.map-frame-wrap{
+  border:1px solid var(--gold-light);
+  margin:1.2rem auto 0;
+  max-width:460px;
+  overflow:hidden;
+}
+.map-frame-wrap iframe{
+  width:100%;height:260px;border:none;display:block;
+}
+.map-open-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 26px;
+  margin-top:14px;
+  background:var(--gold);
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  font-size:14px;
+  font-style:italic;
+  cursor:pointer;
+  text-decoration:none;
+  border:none;
+  transition:background 0.3s;
+}
+.map-open-btn:hover{background:var(--gold-dark)}
+
+/* ---- TIMELINE ---- */
+.timeline-sec{background:var(--cream-dark)}
+.tl-wrap{
+  position:relative;
+  max-width:380px;
+  margin:2rem auto 0;
+}
+.tl-wrap::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:0;bottom:0;
+  width:1px;
+  background:linear-gradient(to bottom,transparent,var(--gold-light) 10%,var(--gold-light) 90%,transparent);
+  transform:translateX(-50%);
+}
+.tl-row{
+  display:flex;
+  align-items:flex-start;
+  margin-bottom:2.2rem;
+  position:relative;
+}
+.tl-dot{
+  position:absolute;
+  left:50%;
+  top:6px;
+  width:10px;height:10px;
+  background:var(--gold);
+  transform:translateX(-50%) rotate(45deg);
+  flex-shrink:0;
+  z-index:2;
+}
+.tl-left,.tl-right{
+  flex:1;
+  padding:0 22px;
+}
+.tl-right{text-align:right}
+.tl-time{
+  font-size:10px;
+  letter-spacing:0.2em;
+  color:var(--gold);
+  margin-bottom:3px;
+}
+.tl-ev-en{
+  font-family:'Playfair Display',serif;
+  font-size:15px;
+  color:var(--brown);
+  font-style:italic;
+}
+.tl-ev-si{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:11px;
+  color:var(--brown-mid);
+  margin-top:2px;
+}
+
+/* ---- COUNTDOWN ---- */
+.cd-sec{background:var(--cream)}
+.cd-grid{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:6px;
+  margin:1.5rem 0;
+  flex-wrap:nowrap;
+}
+.cd-box{text-align:center;min-width:58px}
+.cd-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,9vw,52px);
+  color:var(--brown);
+  line-height:1;
+}
+.cd-lbl{
+  font-size:9px;
+  letter-spacing:0.2em;
+  color:var(--gold);
+  text-transform:uppercase;
+  display:block;
+  margin-top:4px;
+}
+.cd-lbl-si{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:9px;
+  color:var(--brown-mid);
+  display:block;
+}
+.cd-sep{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(24px,6vw,36px);
+  color:var(--gold-light);
+  padding-bottom:24px;
+  align-self:flex-end;
+}
+
+/* ---- RSVP ---- */
+.rsvp-sec{background:var(--cream-dark)}
+.gold-btn{
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--gold);
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  font-size:15px;
+  font-style:italic;
+  cursor:pointer;
+  border:none;
+  text-decoration:none;
+  margin:8px 6px;
+  transition:background 0.3s;
+  letter-spacing:0.03em;
+}
+.gold-btn:hover{background:var(--gold-dark)}
+.outline-btn{
+  display:inline-block;
+  padding:14px 32px;
+  background:transparent;
+  color:var(--gold-dark);
+  font-family:'Playfair Display',serif;
+  font-size:15px;
+  font-style:italic;
+  cursor:pointer;
+  border:1px solid var(--gold);
+  text-decoration:none;
+  margin:8px 6px;
+  transition:all 0.3s;
+}
+.outline-btn:hover{background:var(--gold);color:#fff}
+.rsvp-note{
+  font-size:12px;
+  color:var(--brown-mid);
+  margin-top:12px;
+  letter-spacing:0.08em;
+}
+.footer-sig{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  font-style:italic;
+  color:var(--gold-dark);
+  margin:1.5rem 0 0.5rem;
+}
+.footer-small{
+  font-size:11px;
+  letter-spacing:0.2em;
+  color:var(--brown-mid);
+  opacity:0.7;
+}
+
+/* ---- MODAL ---- */
+.modal-overlay{
+  display:none;
+  position:fixed;inset:0;
+  background:rgba(40,28,18,0.88);
+  z-index:999;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+.modal-overlay.open{display:flex}
+.modal-box{
+  background:var(--cream);
+  max-width:400px;width:100%;
+  padding:2.5rem 2rem 2rem;
+  position:relative;
+  text-align:center;
+  border:1px solid var(--gold-light);
+}
+.modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;
+  font-size:22px;cursor:pointer;
+  color:var(--brown-mid);
+  line-height:1;
+}
+.modal-close:hover{color:var(--brown)}
+.modal-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-style:italic;
+  color:var(--brown);margin-bottom:1.5rem;
+}
+.rsvp-input{
+  width:100%;
+  padding:11px 14px;
+  border:1px solid var(--gold-light);
+  background:var(--cream);
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;
+  color:var(--brown);
+  outline:none;
+  margin-bottom:12px;
+  transition:border-color 0.2s;
+}
+.rsvp-input:focus{border-color:var(--gold)}
+.rsvp-select{
+  width:100%;
+  padding:11px 14px;
+  border:1px solid var(--gold-light);
+  background:var(--cream);
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;
+  color:var(--brown);
+  outline:none;
+  margin-bottom:18px;
+  appearance:none;
+  cursor:pointer;
+}
+.rsvp-submit{
+  width:100%;padding:14px;
+  background:var(--gold);color:#fff;
+  font-family:'Playfair Display',serif;
+  font-size:16px;font-style:italic;
+  border:none;cursor:pointer;
+  transition:background 0.3s;
+}
+.rsvp-submit:hover{background:var(--gold-dark)}
+
+/* ---- SECTION DIVIDER ---- */
+.sec-divider{
+  display:flex;align-items:center;gap:12px;
+  max-width:220px;margin:2rem auto 0;
+}
+.sec-divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold-light),transparent)}
+.sec-divider-gem{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* ---- BG TEXTURES ---- */
+.cream-texture{
+  background:var(--cream);
+  background-image:radial-gradient(circle at 20% 30%, rgba(201,168,76,0.04) 0%, transparent 60%),
+                   radial-gradient(circle at 80% 70%, rgba(201,168,76,0.04) 0%, transparent 60%);
+}
+.cream-dark-texture{
+  background:var(--cream-dark);
+  background-image:radial-gradient(circle at 70% 20%, rgba(201,168,76,0.06) 0%, transparent 50%),
+                   radial-gradient(circle at 30% 80%, rgba(201,168,76,0.06) 0%, transparent 50%);
+}
+
+/* ---- ANIMATIONS ---- */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity 0.8s ease,transform 0.8s ease;
+}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:480px){
+  .tl-ev-en{font-size:13px}
+  .tl-ev-si{font-size:10px}
+  .cd-box{min-width:46px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================= PAGE 1 ============================= -->
+<div id="page1">
+  <div class="petal-bg" id="petalBg"></div>
+
+  <!-- Borders -->
+  <div class="outer-border"></div>
+  <div class="inner-border"></div>
+
+  <!-- Corner decorations -->
+  <svg class="corner-deco tl" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 66 L4 4 L66 4" stroke="#c9a84c" stroke-width="1"/>
+    <path d="M4 4 L18 18" stroke="#c9a84c" stroke-width="0.7" opacity="0.6"/>
+    <circle cx="4" cy="4" r="2" fill="#c9a84c" opacity="0.8"/>
+    <circle cx="66" cy="4" r="1.5" fill="#c9a84c" opacity="0.4"/>
+    <circle cx="4" cy="66" r="1.5" fill="#c9a84c" opacity="0.4"/>
+  </svg>
+  <svg class="corner-deco tr" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 66 L4 4 L66 4" stroke="#c9a84c" stroke-width="1"/>
+    <path d="M4 4 L18 18" stroke="#c9a84c" stroke-width="0.7" opacity="0.6"/>
+    <circle cx="4" cy="4" r="2" fill="#c9a84c" opacity="0.8"/>
+    <circle cx="66" cy="4" r="1.5" fill="#c9a84c" opacity="0.4"/>
+    <circle cx="4" cy="66" r="1.5" fill="#c9a84c" opacity="0.4"/>
+  </svg>
+  <svg class="corner-deco bl" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 66 L4 4 L66 4" stroke="#c9a84c" stroke-width="1"/>
+    <path d="M4 4 L18 18" stroke="#c9a84c" stroke-width="0.7" opacity="0.6"/>
+    <circle cx="4" cy="4" r="2" fill="#c9a84c" opacity="0.8"/>
+    <circle cx="66" cy="4" r="1.5" fill="#c9a84c" opacity="0.4"/>
+    <circle cx="4" cy="66" r="1.5" fill="#c9a84c" opacity="0.4"/>
+  </svg>
+  <svg class="corner-deco br" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 66 L4 4 L66 4" stroke="#c9a84c" stroke-width="1"/>
+    <path d="M4 4 L18 18" stroke="#c9a84c" stroke-width="0.7" opacity="0.6"/>
+    <circle cx="4" cy="4" r="2" fill="#c9a84c" opacity="0.8"/>
+    <circle cx="66" cy="4" r="1.5" fill="#c9a84c" opacity="0.4"/>
+    <circle cx="4" cy="66" r="1.5" fill="#c9a84c" opacity="0.4"/>
+  </svg>
+
+  <div class="p1-content">
+    <div class="p1-sinhala-top">ශ්‍රී සුභ මංගල්‍යය</div>
+
+    <!-- Traditional Kandyan wedding couple image -->
+    <div class="couple-image-wrap">
+      <img class="couple-image" 
+           src="https://thumbs.dreamstime.com/b/adorable-cartoon-vector-sri-lankan-wedding-couple-romantic-embrace-dressed-traditional-kandyan-attire-groom-wears-374814558.jpg" 
+           alt="Kandyan Wedding Couple - Navanjana & Nimesh"
+           loading="eager">
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+    <div class="p1-name">Navanjana</div>
+    <div class="p1-and">&amp;</div>
+    <div class="p1-name">Nimesh</div>
+    <div class="divider"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+
+    <div class="p1-date">21 · JULY · 2026</div>
+    <div class="p1-venue-si">අවෙන්රා ගාර්ඩන් හෝටලය</div>
+    <div class="p1-venue-en">Avenra Garden Hotel</div>
+
+    <button class="open-btn" onclick="openPage2()">
+      ✦ &nbsp; Open Invitation &nbsp; ✦
+    </button>
+  </div>
+</div>
+
+<!-- ============================= PAGE 2 ============================= -->
+<div id="page2">
+
+  <!-- 1. NAMES SECTION -->
+  <div class="section names-sec cream-dark-texture fade-up">
+    <div class="section-inner">
+      <span class="sec-label">ශ්‍රී සුභ මංගල්‍යය · Auspicious Wedding</span>
+      <div class="name-main">Navanjana</div>
+      <div class="name-si">නවංජනා සමරසිංහ</div>
+      <div class="names-and">සහ &nbsp;·&nbsp; &amp;</div>
+      <div class="name-main">Nimesh</div>
+      <div class="name-si">නිමේෂ් සමරකෝන්</div>
+      <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-gem"></div><div class="sec-divider-line"></div></div>
+    </div>
+  </div>
+
+  <!-- 2. SAVE THE DATE -->
+  <div class="section std-sec cream-texture fade-up">
+    <div class="section-inner">
+      <span class="sec-label">Save The Date · දිනය සනිටුහන් කරන්න</span>
+      <div class="std-date-big">21 · 07 · 2026</div>
+      <div class="std-day">Tuesday &nbsp;·&nbsp; අඟහරුවාදා</div>
+      <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-gem"></div><div class="sec-divider-line"></div></div>
+    </div>
+  </div>
+
+  <!-- 3. INVITATION TEXT -->
+  <div class="section invite-sec cream-dark-texture fade-up">
+    <div class="section-inner">
+      <span class="sec-label">Invitation · ආරාධනාව</span>
+      <div class="sec-body-si" style="margin-bottom:1rem">
+        ආදරණීය ඔබව, අපගේ සුභ විවාහ මංගල්‍ය උත්සවයට<br>සතුටින් ආරාධනා කරමු.
+      </div>
+      <div class="sec-body" style="margin-bottom:1rem">
+        With joyful hearts, we warmly invite you<br>to celebrate the most beautiful day of our lives<br>as we begin our journey together.
+      </div>
+      <div class="invite-families">
+        Mr &amp; Mrs Samarasinghe<br>
+        <span style="font-size:15px;color:var(--brown-mid)">සහ &nbsp;/&nbsp; &amp;</span><br>
+        Mr &amp; Mrs Samarakoon
+      </div>
+      <div class="sec-body-si">
+        ඔබගේ සහභාගීත්වය අපට ඉමහත් සතුටක් වනු ඇත.<br>
+      </div>
+      <div class="sec-divider" style="margin-top:2rem"><div class="sec-divider-line"></div><div class="sec-divider-gem"></div><div class="sec-divider-line"></div></div>
+    </div>
+  </div>
+
+  <!-- 4. VENUE & MAP -->
+  <div class="section map-sec cream-texture fade-up">
+    <div class="section-inner">
+      <span class="sec-label">Venue · ස්ථානය</span>
+      <div class="sec-title-en" style="font-size:clamp(20px,5vw,30px)">Avenra Garden Hotel</div>
+      <div class="sec-title-si" style="font-size:clamp(15px,4vw,20px);margin:0.3rem 0 0.2rem">අවෙන්රා ගාර්ඩන් හෝටලය</div>
+      <div class="sec-body" style="font-size:14px;margin-bottom:0.5rem">Kandy Road, Nittambuwa, Sri Lanka</div>
+      <div class="sec-body-si" style="font-size:12px">ආරාධිත උත්සවය · Invited Event</div>
+    </div>
+    <div class="map-frame-wrap" style="max-width:460px;margin:1.2rem auto 0">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6!2d80.0833!3d7.1500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDknMDAuMCJOIDgwwrAwNScwMC4wIkU!5e0!3m2!1sen!2slk!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div style="text-align:center;margin-top:0">
+      <a class="map-open-btn" href="https://maps.app.goo.gl/cjJgyKkmAzRS3EnB8" target="_blank">
+        📍 &nbsp; Open in Google Maps
+      </a>
+    </div>
+    <div class="sec-divider" style="margin-top:2rem"><div class="sec-divider-line"></div><div class="sec-divider-gem"></div><div class="sec-divider-line"></div></div>
+  </div>
+
+  <!-- 5. TIMELINE -->
+  <div class="section timeline-sec cream-dark-texture fade-up">
+    <div class="section-inner">
+      <span class="sec-label">Wedding Day Programme · මංගල දිනය</span>
+      <div class="sec-title-en" style="font-size:clamp(20px,5vw,28px);margin-bottom:0.2rem">Order of Events</div>
+      <div class="sec-title-si" style="font-size:16px">දිනයේ සිදුවීම් අනුපිළිවෙල</div>
+    </div>
+    <div class="tl-wrap">
+
+      <div class="tl-row">
+        <div class="tl-left" style="text-align:right">
+          <div class="tl-time">9:00 AM · ප.ව. 9:00</div>
+          <div class="tl-ev-en">Arrival & Welcome</div>
+          <div class="tl-ev-si">පැමිණීම</div>
+        </div>
+        <div class="tl-dot"></div>
+        <div class="tl-right"></div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-right">
+          <div class="tl-time">10:00 AM · ප.ව. 10:00</div>
+          <div class="tl-ev-en">Poruwa Ceremony</div>
+          <div class="tl-ev-si">පෝරුවේ චාරිත්‍ර</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left" style="text-align:right">
+          <div class="tl-time">11:00 AM · ප.ව. 11:00</div>
+          <div class="tl-ev-en">Blessings</div>
+          <div class="tl-ev-si">ආශිර්වාද</div>
+        </div>
+        <div class="tl-dot"></div>
+        <div class="tl-right"></div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-right">
+          <div class="tl-time">12:00 PM · ප.ව. 12:00</div>
+          <div class="tl-ev-en">Traditional Dance</div>
+          <div class="tl-ev-si">සාම්ප්‍රදායික නර්තනය</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left" style="text-align:right">
+          <div class="tl-time">1:00 PM · ප.ව. 1:00</div>
+          <div class="tl-ev-en">Wedding Lunch</div>
+          <div class="tl-ev-si">ආහාර වේලාව</div>
+        </div>
+        <div class="tl-dot"></div>
+        <div class="tl-right"></div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-right">
+          <div class="tl-time">2:30 PM · ප.ව. 2:30</div>
+          <div class="tl-ev-en">Celebrations & Dance</div>
+          <div class="tl-ev-si">නර්තන - විශේෂ වේදිකාව</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left" style="text-align:right">
+          <div class="tl-time">4:00 PM · ප.ව. 4:00</div>
+          <div class="tl-ev-en">Marriage Ceremony</div>
+          <div class="tl-ev-si">විවාහ කිරීම</div>
+        </div>
+        <div class="tl-dot"></div>
+        <div class="tl-right"></div>
+      </div>
+
+    </div>
+    <div class="sec-divider" style="margin-top:2rem"><div class="sec-divider-line"></div><div class="sec-divider-gem"></div><div class="sec-divider-line"></div></div>
+  </div>
+
+  <!-- 6. COUNTDOWN -->
+  <div class="section cd-sec cream-texture fade-up">
+    <div class="section-inner">
+      <span class="sec-label">Counting Down · ගණන් කරමු</span>
+      <div class="sec-body-si" style="font-size:13px;margin-bottom:0.3rem">සුභ දිනය දක්වා ඉතිරි කාලය</div>
+      <div class="sec-body" style="font-size:13px;margin-bottom:0">Time remaining until the big day</div>
+    </div>
+    <div class="cd-grid">
+      <div class="cd-box">
+        <div class="cd-num" id="cd-days">—</div>
+        <span class="cd-lbl">Days</span>
+        <span class="cd-lbl-si">දින</span>
+      </div>
+      <div class="cd-sep">·</div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-hours">—</div>
+        <span class="cd-lbl">Hours</span>
+        <span class="cd-lbl-si">පැය</span>
+      </div>
+      <div class="cd-sep">·</div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-mins">—</div>
+        <span class="cd-lbl">Mins</span>
+        <span class="cd-lbl-si">මිනිත්තු</span>
+      </div>
+      <div class="cd-sep">·</div>
+      <div class="cd-box">
+        <div class="cd-num" id="cd-secs">—</div>
+        <span class="cd-lbl">Secs</span>
+        <span class="cd-lbl-si">තත්පර</span>
+      </div>
+    </div>
+    <div class="sec-divider"><div class="sec-divider-line"></div><div class="sec-divider-gem"></div><div class="sec-divider-line"></div></div>
+  </div>
+
+  <!-- 7. RSVP & CALENDAR -->
+  <div class="section rsvp-sec cream-dark-texture fade-up">
+    <div class="section-inner">
+      <span class="sec-label">Kindly Respond · ප්‍රතිචාර දක්වන්න</span>
+      <div class="sec-title-si" style="font-size:18px;margin-bottom:0.5rem">ඔබගේ පැමිණීම තහවුරු කරන්න</div>
+      <div class="sec-body" style="margin-bottom:1.8rem">
+        Please confirm your attendance before<br>
+        <strong style="color:var(--gold-dark);font-size:18px">10th July 2026</strong><br>
+        <span style="font-family:'Noto Serif Sinhala',serif;font-size:13px;color:var(--brown-mid)">ජූලි 10 දිනට ඔබේ ප්‍රතිචාරය ලබා දෙන්න</span>
+      </div>
+      <div>
+        <a class="gold-btn"
+          href="https://calendar.google.com/calendar/r/eventedit?text=Navanjana+%26+Nimesh+Wedding&dates=20260721T043000Z/20260721T110000Z&details=Wedding+Ceremony+of+Navanjana+Samarasinghe+%26+Nimesh+Samarakoon+at+Avenra+Garden+Hotel&location=Avenra+Garden+Hotel"
+          target="_blank">
+          📅 &nbsp; Add to Google Calendar
+        </a>
+        <button class="outline-btn" onclick="document.getElementById('rsvpModal').classList.add('open')">
+          ✉ &nbsp; Confirm Attendance
+        </button>
+      </div>
+      <div class="rsvp-note">ජූලි 10 වන දිනට ප්‍රතිචාරය ලබා දෙන්න</div>
+    </div>
+
+    <!-- Footer -->
+    <div style="margin-top:3rem;text-align:center">
+      <div class="divider" style="margin:0 auto 1.5rem"><div class="divider-line"></div><div class="divider-gem"></div><div class="divider-line"></div></div>
+      <div class="footer-sig">Navanjana &amp; Nimesh</div>
+      <div style="font-family:'Noto Serif Sinhala',serif;font-size:14px;color:var(--brown-mid);margin:0.3rem 0">නවංජනා සහ නිමේෂ්</div>
+      <div class="footer-small">21 · 07 · 2026 &nbsp;·&nbsp; Avenra Garden Hotel</div>
+      <div style="margin-top:1.2rem;font-size:20px;color:var(--gold);letter-spacing:0.2em">❤</div>
+      <div style="margin-top:2rem;font-size:10px;letter-spacing:0.15em;color:var(--brown-mid);opacity:0.5">For your invitation · Contact us</div>
+    </div>
+  </div>
+
+</div><!-- end page2 -->
+
+<!-- RSVP MODAL -->
+<div class="modal-overlay" id="rsvpModal" onclick="handleModalClick(event)">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="document.getElementById('rsvpModal').classList.remove('open')">✕</button>
+    <div class="sec-label" style="margin-bottom:0.5rem">RSVP</div>
+    <div class="modal-title">Confirm Your Attendance<br><span style="font-family:'Noto Serif Sinhala',serif;font-size:16px">ඔබගේ පැමිණීම තහවුරු කරන්න</span></div>
+    <input class="rsvp-input" id="rsvpName" type="text" placeholder="Your Name · ඔබගේ නම">
+    <input class="rsvp-input" id="rsvpPhone" type="tel" placeholder="Phone Number · දුරකථන අංකය">
+    <input class="rsvp-input" id="rsvpGuests" type="number" min="1" max="10" placeholder="Number of Guests · ආගන්තුකයන් සංඛ්‍යාව">
+    <select class="rsvp-select" id="rsvpAttend">
+      <option value="">Will you attend? · සහභාගී වේද?</option>
+      <option value="yes">✓ Yes, I'll be there! / ඔව්, ඒකට එන්නම්!</option>
+      <option value="no">✗ Sorry, unable to attend / සමාව, එන්නට නොහැකි</option>
+    </select>
+    <button class="rsvp-submit" onclick="submitRSVP()">
+      Confirm · තහවුරු කරන්න
+    </button>
+  </div>
+</div>
+
+<script>
+// Open page 2
+function openPage2(){
+  document.getElementById('page1').style.display='none';
+  document.getElementById('page2').style.display='block';
+  startCountdown();
+  initScrollAnimations();
+  // Trigger first visible sections
+  setTimeout(function(){
+    var els=document.querySelectorAll('.fade-up');
+    if(els[0]) els[0].classList.add('visible');
+    if(els[1]) els[1].classList.add('visible');
+  },100);
+}
+
+// Countdown timer
+function startCountdown(){
+  function tick(){
+    var target=new Date('2026-07-21T10:00:00+05:30');
+    var now=new Date();
+    var diff=target-now;
+    if(diff<0){diff=0}
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor((diff%86400000)/3600000);
+    var m=Math.floor((diff%3600000)/60000);
+    var s=Math.floor((diff%60000)/1000);
+    document.getElementById('cd-days').textContent=d;
+    document.getElementById('cd-hours').textContent=h;
+    document.getElementById('cd-mins').textContent=m;
+    document.getElementById('cd-secs').textContent=s;
+  }
+  tick();
+  setInterval(tick,1000);
+}
+
+// Scroll reveal animations
+function initScrollAnimations(){
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting) e.target.classList.add('visible');
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.fade-up').forEach(function(el){
+    observer.observe(el);
+  });
+}
+
+// Modal close on backdrop click
+function handleModalClick(e){
+  if(e.target===document.getElementById('rsvpModal')){
+    document.getElementById('rsvpModal').classList.remove('open');
+  }
+}
+
+// RSVP submit
+function submitRSVP(){
+  var name=document.getElementById('rsvpName').value.trim();
+  var attend=document.getElementById('rsvpAttend').value;
+  if(!name||!attend){
+    alert('Please fill your name and attendance choice.\nඔබගේ නම සහ පැමිණීම පිළිබඳ තෝරන්න.');
+    return;
+  }
+  document.getElementById('modalBox').innerHTML=
+    '<div style="padding:1rem 0">'+
+    '<div style="font-size:36px;color:#c9a84c;margin-bottom:1rem">✦</div>'+
+    '<div style="font-family:Playfair Display,serif;font-size:22px;font-style:italic;color:#3a2e24;margin-bottom:0.8rem">Thank You!</div>'+
+    '<div style="font-family:Noto Serif Sinhala,serif;font-size:15px;color:#6b5744;line-height:1.9">ඔබගේ ප්‍රතිචාරය ලැබිණ.<br>ඔබව දැකීමට ඉතා ආශාවෙන් සිටිමු.<br>ස්තූතියි!</div>'+
+    '<div style="font-size:14px;color:#6b5744;margin-top:0.8rem;font-style:italic">We can\'t wait to celebrate with you!</div>'+
+    '<button onclick="document.getElementById(\'rsvpModal\').classList.remove(\'open\')" style="margin-top:1.8rem;padding:12px 32px;border:1px solid #c9a84c;background:transparent;color:#8b6914;font-family:Playfair Display,serif;font-size:15px;font-style:italic;cursor:pointer">Close</button>'+
+    '</div>';
+}
+
+// Generate falling petals
+(function(){
+  var bg=document.getElementById('petalBg');
+  var colors=['#f0d0d8','#c9a84c','#f5e6c8','#e8a0b0','#f0c8a0'];
+  for(var i=0;i<18;i++){
+    var p=document.createElement('div');
+    p.className='petal';
+    var size=6+Math.random()*10;
+    p.style.cssText=
+      'width:'+size+'px;'+
+      'height:'+size+'px;'+
+      'background:'+colors[Math.floor(Math.random()*colors.length)]+';'+
+      'border-radius:'+(Math.random()>0.5?'50% 0 50% 0':'50%')+';'+
+      'left:'+(Math.random()*100)+'%;'+
+      'animation-duration:'+(7+Math.random()*9)+'s;'+
+      'animation-delay:'+(Math.random()*8)+'s;'+
+      'transform:rotate('+(Math.random()*360)+'deg)';
+    bg.appendChild(p);
+  }
+})();
+</script>
+</body>
+</html>
